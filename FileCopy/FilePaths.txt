@@ -1,0 +1,4 @@
+res/ConfigData/player_data.xml
+res/ConfigData/weapons_data.xml
+res/multilingual_support/chs/string.xml
+res/multilingual_support/en/string.xml
