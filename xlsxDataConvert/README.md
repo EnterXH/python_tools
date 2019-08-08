@@ -3,15 +3,15 @@
 ---
 
 #### 环境需求
-需要python3和xlrd模块
+需要xlrd模块
 
-	> python3下载
+> 获取xlrd模块
 		
-	> mac环境可以通过 `pip install xlrd` 获取xlrd模块
-		
-	> win环境，自行搜索下载安装
+	> sudo pip install xlrd
+			
+> win环境，自行搜索下载安装
 	
-		https://pypi.org/project/xlrd/
+	https://pypi.org/project/xlrd/
 	
 #### 使用
 脚本执行会根据xlsx中的sheet名称生成不同的json文件

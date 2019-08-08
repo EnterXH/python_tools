@@ -5,7 +5,7 @@ import sys
 import xlrd
 import json
 
-#是否是一个字典 True/False
+#是否转成一个字典 True/False
 IsDict = False
 
 # 如果是字典 需要定义第几列为dic的key（作为key的列之前的内容无效）
