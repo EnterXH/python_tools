@@ -6,11 +6,13 @@ import xlrd
 import json
 
 #是否转成一个字典 True/False
-IsDict = False
+IsDict = True
 
 # 如果是字典 需要定义第几列为dic的key（作为key的列之前的内容无效）
 # 如果不是一个字典，则是0
-DictKey = 0
+DictKey = 1
+if not IsDict:
+    DictKey = 0
 
 # 当前行用来定义单元格的数据类型
 # 基础类型：数字int 浮点数float 字符串 string
