@@ -145,7 +145,7 @@ def HandleSheetData(sheet, index):
             jsonData[key] = value
         else:
             jsonData.append(value)
-    return json.dumps(jsonData, indent = 4)
+    return json.dumps(jsonData, indent=4,ensure_ascii=False)
 
 def writeToFile(outpath, filename, data):
     # 生成输出文件夹
@@ -179,8 +179,8 @@ if __name__ == "__main__":
         print(sheet.name, "列：", sheet.ncols, "行：", sheet.nrows)
         json_string = HandleSheetData(sheet, index)
 
-        # print(json_string)
+        print(json_string.encode('utf-8'))
         # 写入文件
-        writeToFile(outputpath, sheet.name, json_string)
+        writeToFile(outputpath, sheet.name, json_string.encode('utf-8'))
 
     print('数据转换完成')
