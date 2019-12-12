@@ -3,25 +3,18 @@
 ---
 
 #### 环境需求
-需要xlrd模块
-
-> 获取xlrd模块
-		
-	> sudo pip install xlrd
-			
-> win环境，自行搜索下载安装
-	
-	https://pypi.org/project/xlrd/
+1. 安装python3环境
+2. 需要xlrd模块
+    1. 获取xlrd模块
+    2. sudo pip3 install xlrd
+    3. win环境，自行搜索下载安装[win环境xlrd下载地址](https://pypi.org/project/xlrd/)
 	
 #### 使用
 脚本执行会根据xlsx中的sheet名称生成不同的json文件
-
 每个sheet对应一个json
 
-	python FileCopy.py xlsx文件 #输出目录
-	
-	> 参数1 xlsx文件路径
-	> 参数2 输出路径（如果不填则默认输出到脚本所在目录）
+	python FileCopy.py #输出目录
+	参数2 输出路径（如果不填则默认输出到脚本所在目录）
 
 #### xlsx格式说明
 
