@@ -16,8 +16,8 @@ compress_quality = '75-80'
 # 压缩工具
 
 
-def compressPNG(inputpath, filename):
-    cmd = pngquant + " --ext " + ".png --force " + " " + filename + " --quality " + compress_quality
+def compressPNG(inputpath, filename, postfix):
+    cmd = pngquant + " --ext " + postfix + " --force " + " " + filename + " --quality " + compress_quality
     # 如果不替换原文件，则copy压缩后的图片到其他位置
     if not SaveToOriginalDir:
         suffix = os.path.splitext(filename)
@@ -43,9 +43,10 @@ def compressPNG(inputpath, filename):
 def recursionDic(inputpath, path):
     if os.path.isfile(path):
         suffix = os.path.splitext(path)
-        if suffix[1] == ".png":
-            print path
-            compressPNG(inputpath, path)
+        if suffix[1] == ".jpg":
+            compressPNG(inputpath, path, ".jpg")
+        elif suffix[1] == ".png":
+            compressPNG(inputpath, path, ".png")
     else:
         lst = os.listdir(path)
         for ph in lst:
@@ -57,11 +58,10 @@ if __name__ == '__main__':
 
     # png所在路径（传入参数）
     inputpath = os.getcwd()
-    print inputpath
     if len(sys.argv) > 1:
         inputpath = sys.argv[1]
 
     # 递归遍历路径下的png
-    print inputpath
+    print(inputpath)
     recursionDic(inputpath, inputpath)
-    print '压缩图片完成'
+    print('压缩图片完成')
