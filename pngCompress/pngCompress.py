@@ -54,7 +54,7 @@ def compressPNG(inputpath, filename, postfix):
     status = os.system(cmd)
     if status != 0:
         print("压缩失败" + filename)
-    
+        print(status)
 
 
 def recursionDic(inputpath, path):
