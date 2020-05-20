@@ -52,7 +52,7 @@ def compressPNG(inputpath, filename, postfix):
         # print("new_path ====" + new_path)
         cmd = pngquant + " " + filename + " --quality " + compress_quality + " -o " + new_path
     status = os.system(cmd)
-    if status == 25344:
+    if status != 0:
         print("压缩失败" + filename)
     
 
