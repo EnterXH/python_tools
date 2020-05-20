@@ -17,24 +17,40 @@ compress_quality = '75-80'
 
 
 def compressPNG(inputpath, filename, postfix):
-    cmd = pngquant + " --ext " + postfix + " --force " + " " + filename + " --quality " + compress_quality
+    cmd = pngquant + " " + filename + " --quality " + compress_quality + " --ext=" + postfix + " --force"
     # 如果不替换原文件，则copy压缩后的图片到其他位置
     if not SaveToOriginalDir:
         suffix = os.path.splitext(filename)
         abspath = filename.replace(inputpath, '')
-        compress_path = 'compress' + abspath
-        folders = compress_path.split(symb)
+        # compress_path = 'compress' + abspath
+        folders = abspath.split(symb)
         folders.pop()
+        # print("输入路径" + inputpath + " 压缩路径"+abspath)
+        # folderpath = os.getcwd()
 
-        folderpath = os.getcwd()
+        outputpath = ""
+        if inputpath[len(inputpath) - 1] == '/':
+            inputpath = inputpath[0:-1]
+
+        print("inputpath =" + inputpath)
+        input_folders = inputpath.split(symb)
+        input_folders.pop()
+        for path in input_folders:
+            outputpath = outputpath + path + symb
+        outputpath = outputpath + "compress"
+        print("outputpath : " + outputpath)
+
+        folderpath = outputpath
         for folder_name in folders:
             folderpath = folderpath + symb + folder_name
             # print folderpath
             if not os.path.isdir(folderpath):
                 os.makedirs(folderpath)
 
-        new_path = os.getcwd() + symb + 'compress' + abspath
-        cmd = pngquant + " " + filename + " --quality " + compress_quality + " --output " + new_path
+        new_path = outputpath + abspath
+        print("fuck ====" + outputpath + " " + abspath)
+        print("new_path ====" + new_path)
+        cmd = pngquant + " " + filename + " --quality " + compress_quality + " -o " + new_path
 
     os.system(cmd)
     print(cmd)
@@ -60,6 +76,21 @@ if __name__ == '__main__':
     inputpath = os.getcwd()
     if len(sys.argv) > 1:
         inputpath = sys.argv[1]
+    if len(sys.argv) > 2:
+        SaveToOriginalDir = sys.argv[2]
+
+
+    outputpath = ""
+    if inputpath[len(inputpath) - 1] == '/':
+        inputpath = inputpath[0:-1]
+    print("inputpath =" + inputpath)
+    input_folders = inputpath.split(symb)
+    input_folders.pop()
+    for path in input_folders:
+        outputpath = outputpath + path + symb
+    outputpath = outputpath + "compress"
+    if os.path.isdir(outputpath):
+        shutil.rmtree(outputpath)
 
     # 递归遍历路径下的png
     print(inputpath)

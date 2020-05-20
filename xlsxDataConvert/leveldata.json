@@ -1,0 +1,72 @@
+{
+    "101": {
+        "map_name": "map101",
+        "des": "关卡1描述",
+        "name": "关卡1",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "102": {
+        "map_name": "map102",
+        "des": "关卡2描述",
+        "name": "关卡2",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "103": {
+        "map_name": "map103",
+        "des": "关卡3描述",
+        "name": "关卡3",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "104": {
+        "map_name": "map104",
+        "des": "关卡4描述",
+        "name": "关卡4",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "105": {
+        "map_name": "map105",
+        "des": "关卡5描述",
+        "name": "关卡5",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "106": {
+        "map_name": "map106",
+        "des": "关卡6描述",
+        "name": "关卡6",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "107": {
+        "map_name": "map107",
+        "des": "关卡7描述",
+        "name": "关卡7",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "108": {
+        "map_name": "map108",
+        "des": "关卡8描述",
+        "name": "关卡8",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "109": {
+        "map_name": "map109",
+        "des": "关卡9描述",
+        "name": "关卡9",
+        "chapter_id": 70001,
+        "boss_name": ""
+    },
+    "110": {
+        "map_name": "map110",
+        "des": "关卡10描述",
+        "name": "关卡10",
+        "chapter_id": 70001,
+        "boss_name": "Boss1_1"
+    }
+}
