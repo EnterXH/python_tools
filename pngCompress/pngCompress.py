@@ -32,13 +32,13 @@ def compressPNG(inputpath, filename, postfix):
         if inputpath[len(inputpath) - 1] == '/':
             inputpath = inputpath[0:-1]
 
-        print("inputpath =" + inputpath)
+        # print("inputpath =" + inputpath)
         input_folders = inputpath.split(symb)
         input_folders.pop()
         for path in input_folders:
             outputpath = outputpath + path + symb
         outputpath = outputpath + "compress"
-        print("outputpath : " + outputpath)
+        # print("outputpath : " + outputpath)
 
         folderpath = outputpath
         for folder_name in folders:
@@ -48,12 +48,13 @@ def compressPNG(inputpath, filename, postfix):
                 os.makedirs(folderpath)
 
         new_path = outputpath + abspath
-        print("fuck ====" + outputpath + " " + abspath)
-        print("new_path ====" + new_path)
+        # print("fuck ====" + outputpath + " " + abspath)
+        # print("new_path ====" + new_path)
         cmd = pngquant + " " + filename + " --quality " + compress_quality + " -o " + new_path
-
-    os.system(cmd)
-    print(cmd)
+    status = os.system(cmd)
+    if status == 25344:
+        print("压缩失败" + filename)
+    
 
 
 def recursionDic(inputpath, path):
@@ -93,6 +94,7 @@ if __name__ == '__main__':
         shutil.rmtree(outputpath)
 
     # 递归遍历路径下的png
-    print(inputpath)
+    print("输入路径:", inputpath)
+    print("正在压缩 请稍后...")
     recursionDic(inputpath, inputpath)
     print('压缩图片完成')
