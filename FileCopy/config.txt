@@ -1,0 +1,13 @@
+FGUIProject/assets/ActivityWindow/item1.xml
+FGUIProject/assets/Basics/DownBar.xml
+FGUIProject/assets/Basics/guide/guide_finger.xml
+FGUIProject/assets/Basics/package.xml
+assets/resources/ui/MainWindow/ActivityWindow.bin
+assets/resources/ui/basic/Basics.bin
+assets/scripts/Helper/Data/GuideData.ts
+assets/scripts/Net/NetTask/NetDailyMatchReward.ts
+assets/scripts/Net/NetTask/NetDailyMatchSignup.ts
+assets/scripts/UI/GainAward/FinalWindow.ts
+assets/scripts/UI/NormalWindow/ChampionshipWindow.ts
+assets/scripts/UI/NormalWindow/MainWindow.ts
+assets/scripts/UI/UIComponent/NavigationBar.ts

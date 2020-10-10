@@ -12,7 +12,8 @@ if sys.platform == 'win32':
 # 是否替换原文件
 SaveToOriginalDir = False
 # 压缩质量范围
-compress_quality = '75-80'
+compress_quality = '90-100'
+# compress_quality = '85-90'
 # 压缩工具
 
 
